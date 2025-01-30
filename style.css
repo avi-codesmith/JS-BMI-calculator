@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 98vh;
+  font-family: sans-serif;
+}
+
+.box {
+  background-color: rgb(238, 241, 250);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 12px 64px;
+}
+
+h1,
+.margin-bottom {
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 32px;
+  color: royalblue;
+  text-align: center;
+}
+
+.input {
+  height: 45px;
+  width: 400px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #555;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  margin-top: 6px;
+}
+
+.input:focus {
+  border: 2px solid royalblue;
+}
+
+button {
+  padding: 8px 16px;
+  margin-bottom: 24px;
+  background-color: royalblue;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.para {
+  color: #222;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  stroke: royalblue;
+  z-index: 9999;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+}
+
+.Enter {
+  color: #444;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.img {
+  height: 98px;
+  width: 98px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 24px;
+}
+
+.results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: none;
+}
+
+.result-para {
+  color: green;
+  font-size: 24px;
+  font-weight: 600;
+}
