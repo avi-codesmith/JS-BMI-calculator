@@ -23,35 +23,43 @@ function calculateBMI() {
     return;
   }
 
-  let bmi = Math.trunc(weightValue / (heightValue / 100) ** 2);
+  // ✅ Corrected BMI calculation with proper rounding
+  let bmi = (weightValue / (heightValue / 100) ** 2).toFixed(1);
 
   if (bmi < 18.5) {
     resultBox.style.display = "block";
-    img.src = "like.png";
-    resultPara.innerHTML = "You have correct BMI!";
-    resultPara.style.color = "green";
-  } else if (bmi > 18.5) {
     img.src = "warning.png";
-    resultPara.innerHTML = "You are thin!";
+    resultPara.innerHTML = "You are underweight!";
     resultPara.style.color = "orange";
   } else if (bmi >= 18.5 && bmi < 24.9) {
     resultBox.style.display = "block";
     img.src = "like.png";
-    resultPara.innerHTML = "You have healthy fat!";
+    resultPara.innerHTML = "You have a healthy BMI!";
     resultPara.style.color = "green";
   } else if (bmi >= 25 && bmi < 29.9) {
     resultBox.style.display = "block";
     img.src = "warning.png";
-    resultPara.innerHTML = "You have Overweight!";
+    resultPara.innerHTML = "You are overweight!";
     resultPara.style.color = "orange";
+  } else if (bmi >= 30 && bmi < 34.9) {
+    resultBox.style.display = "block";
+    img.src = "dislike.png";
+    resultPara.innerHTML = "You have Obesity (Class 1)!";
+    resultPara.style.color = "red";
+  } else if (bmi >= 35 && bmi < 39.9) {
+    resultBox.style.display = "block";
+    img.src = "dislike.png";
+    resultPara.innerHTML = "You have Obesity (Class 2)!";
+    resultPara.style.color = "red";
   } else {
     resultBox.style.display = "block";
     img.src = "dislike.png";
-    resultPara.innerHTML = "You are in Obese!";
+    resultPara.innerHTML = "You have Extreme Obesity (Class 3)!";
     resultPara.style.color = "red";
   }
+
   resultBox.style.display = "block";
-  result.innerHTML = ` Results: <b>${bmi}</b>`;
+  result.innerHTML = `Results: <b>${bmi}</b>`;
   result.style.color = "#333";
 }
 
@@ -66,7 +74,7 @@ document.addEventListener("keydown", (event) => {
 again.addEventListener("click", () => {
   height.value = "";
   weight.value = "";
-  result.innerHTML = ` Results:`;
+  result.innerHTML = `Results:`;
   resultBox.style.display = "none";
   result.style.color = "#333";
 });
